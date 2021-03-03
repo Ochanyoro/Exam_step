@@ -1,0 +1,31 @@
+<div class="main users-new">
+  <div class="container">
+    <div class="form-heading">新しい教授を作成</div>
+    <div class="form users-form">
+      <div class="form-body">
+        <% if @error_message %>
+          <div class="form-error">
+            <%= @error_message %>
+          </div>
+        <% end %>
+
+        <% if @course.name %>
+          <%= form_tag("/teachers/#{@course.id}/create") do %>
+          <p>コース名:<%=@course.name%></p>
+          <p>名前</p>
+          <input name="name" value="<%= @teacher.name %>">
+          <input type="submit" value="新規登録">
+          <% end %>
+       <% else %>
+          <%= form_tag("/teachers/create") do %>
+          <p>コース名:</p>
+          <input name="course_name" value="<%=@course.name%>">
+          <p>名前</p>
+          <input name="name" value="<%= @teacher.name %>">
+          <input type="submit" value="新規登録">
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

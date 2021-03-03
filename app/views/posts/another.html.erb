@@ -1,0 +1,119 @@
+<div class="main user-show">
+  <div class="container3">
+  <div class="user2">
+    <div class="migi">
+    <img src="<%= "/subjects_images/#{@subject.image_name}" %>">
+    <h2><%= @subject.name %></h2>
+    <% if @subject.level %>
+      <% l = @subject.floor_class %>
+      <%if @subject.level >= 0.0 && @subject.level <0.5 %>
+        <div style="font-size:13px"><span class="star" data-rate="0.0"></span>(<%= l%>)</div>
+      <% elsif @subject.level >= 0.5 && @subject.level <1.0 %>
+        <div style="font-size:13px"><span class="star" data-rate="0.5"></span>(<%= l%>)</div>
+      <% elsif @subject.level >= 1.0 && @subject.level <1.5 %>
+        <div style="font-size:13px"><span class="star" data-rate="1.0"></span>(<%= l%>)</div>
+      <% elsif @subject.level >= 1.5 && @subject.level <2.0 %>
+        <div style="font-size:13px"><span class="star" data-rate="1.5"></span>(<%= l%>)</div>
+      <% elsif @subject.level >= 2.0 && @subject.level <2.5 %>
+        <div style="font-size:13px"><span class="star" data-rate="2.0"></span>(<%= l%>)</div>
+      <% elsif @subject.level >= 2.5 && @subject.level <3.0 %>
+        <div style="font-size:13px"><span class="star" data-rate="2.5"></span>(<%= l%>)</div>
+      <% elsif @subject.level >= 3.0 && @subject.level <3.5 %>
+        <div style="font-size:13px"><span class="star" data-rate="3.0"></span>(<%= l%>)</div>
+      <% elsif @subject.level >= 3.5 && @subject.level <4.0 %>
+        <div style="font-size:13px"><span class="star" data-rate="3.5"></span>(<%= l%>)</div>
+      <% elsif @subject.level >= 4.0 && @subject.level <4.5 %>
+        <div style="font-size:13px"><span class="star" data-rate="4.0"></span>(<%= l%>)</div>
+      <% elsif @subject.level >= 4.5 && @subject.level <5.0 %>
+        <div style="font-size:13px"><span class="star" data-rate="4.5"></span>(<%= l%>)</div>
+      <% else %>
+        <div style="font-size:13px"><span class="star" data-rate="5.0"></span>(<%= l%>)</div>
+      <% end %>
+    <% end %>
+
+
+    <% if @subject.user.id == @current_user.id %>
+      <%= link_to("編集", "/subjects/#{@subject.id}/edit") %>
+    <% end %>
+    </div>
+    <div class="hidari formm users-form2">
+      <div class="form-body2">
+        <%= form_tag("/posts/#{@subject.id}/create") do %>
+          <p style="color:black;font-size:14px;margin:0;text-align:center">授業のおすすめ度を５段階で入力</p>
+          <input name="evaluate">
+          <p style="color:black;font-size:14px;margin:0;text-align:center">授業の感想及び評価</p>
+          <textarea name="content"><%= @post.content %></textarea>
+          <input type="submit" value="投稿">
+        <% end %>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="container3">
+
+
+    <!-- 指定されたコードを貼り付けてください -->
+    <ul class="user-tabs">
+      <li><%= link_to("授業コメント", "/posts/#{@subject.id}") %></li>
+      <li><%= link_to("過去問", "/posts/#{@subject.id}/past_mondai") %></li>
+      <li><%= link_to("授業ノート", "/posts/#{@subject.id}/note") %></li>
+      <li><%= link_to("配布資料", "/posts/#{@subject.id}/handout") %></li>
+      <li><%= link_to("課題", "/posts/#{@subject.id}/task") %></li>
+      <li class="active"><%= link_to("その他", "#") %></li>
+
+    </ul>
+    <% if @posts_data %>
+      <% @posts_data.each do |post| %>
+        <% if post[0] %>
+          <div class="posts-index-item4">
+            <%= post[0].post_at.year%>
+
+          </div>
+          <div class="posts-index-item">
+            <div class="row">
+              <% post.each do |data| %>
+                <div class="a col-12 mb-1">
+                  その他:おすすめ度
+                  <%if data.level >= 0.0 && data.level <0.5 %>
+                    <div style="font-size:13px"><span class="star" data-rate="0.0"></span>(<%= data.level%>)</div>
+                  <% elsif data.level >= 0.5 && data.level <1.0 %>
+                    <div style="font-size:13px"><span class="star" data-rate="0.5"></span>(<%= data.level%>)</div>
+                  <% elsif data.level >= 1.0 && data.level <1.5 %>
+                    <div style="font-size:13px"><span class="star" data-rate="1.0"></span>(<%= data.level%>)</div>
+                  <% elsif data.level >= 1.5 && data.level <2.0 %>
+                    <div style="font-size:13px"><span class="star" data-rate="1.5"></span>(<%= data.level%>)</div>
+                  <% elsif data.level >= 2.0 && data.level <2.5 %>
+                    <div style="font-size:13px"><span class="star" data-rate="2.0"></span>(<%= data.level%>)</div>
+                  <% elsif data.level >= 2.5 && data.level <3.0 %>
+                    <div style="font-size:13px"><span class="star" data-rate="2.5"></span>(<%= data.level%>)</div>
+                  <% elsif data.level >= 3.0 && data.level <3.5 %>
+                    <div style="font-size:13px"><span class="star" data-rate="3.0"></span>(<%= data.level%>)</div>
+                  <% elsif data.level >= 3.5 && data.level <4.0 %>
+                    <div style="font-size:13px"><span class="star" data-rate="3.5"></span>(<%= data.level%>)</div>
+                  <% elsif data.level >= 4.0 && data.level <4.5 %>
+                    <div style="font-size:13px"><span class="star" data-rate="4.0"></span>(<%= data.level%>)</div>
+                  <% elsif data.level >= 4.5 && data.level <5.0 %>
+                    <div style="font-size:13px"><span class="star" data-rate="4.5"></span>(<%=data.level%>)</div>
+                  <% else %>
+                    <div style="font-size:13px"><span class="star" data-rate="5.0"></span>(<%= data.level%>)</div>
+                  <% end %>
+                </div>
+            </div>
+              <div class="row mt-2">
+                <% data.images.each do |image| %>
+                  <div class="col-6">
+                    <div class="user2-image mb-4">
+                      <%= link_to image, "data-lightbox" => image do %>
+                        <%= image_tag image.variant(resize: '250'),:style=>"width:300;"  %>
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

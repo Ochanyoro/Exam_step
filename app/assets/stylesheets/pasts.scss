@@ -1,0 +1,28 @@
+// Place all the styles related to the pasts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.medatu{
+  color:black;
+}
+
+select::-ms-expand {
+	display: none;
+}
+select {
+  width:100%;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+  margin-top:10px;
+	margin-bottom: 20px;
+  padding:10px 20px;
+	font-size: 93%;
+	line-height: 1.1em;
+	border-radius: 5px;
+	border: none;
+	background-image: url(./images/icon_arrow.svg);
+	background-repeat: no-repeat;
+	background-size: 16px 14px;
+	background-position: right 10px center;
+	background-color: rgba(250, 220, 202,0.8);
+}

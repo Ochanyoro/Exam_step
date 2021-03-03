@@ -1,0 +1,20 @@
+<div class="main posts-index">
+  <div class="container">
+    <% @posts.each do |post| %>
+      <div class="posts-index-item">
+        <div class="post-left">
+          <!-- ユーザーの画像が表示されるように、以下のsrcに値を追加してください -->
+          <img src="<%= "/subjects_images/#{@subject.image_name}" %>">
+        </div>
+        <div class="post-right">
+          <div class="post-user-name">
+            <!-- link_toメソッドを用いて、ユーザー詳細ページへのリンクを作成してください -->
+            <p><%= Teacher.find_by(id:@subject.teacher_id).name%></p>
+            <%= link_to(post.subjects.name, "#") %>
+          </div>
+          <%= link_to(post.content, "#") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

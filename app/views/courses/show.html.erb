@@ -1,0 +1,27 @@
+<div class="main user-show">
+  <div class="container">
+    <div class="user">
+      <img src="<%= "/courses_images/#{@course.image_name}" %>">
+      <h2><%= @course.name %></h2>
+      <% if @current_user%>
+        <% if @course.user_id == @current_user.id %>
+        <%= link_to("編集", "/courses/#{@course.id}/edit") %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <% @course.teachers.each do |teacher| %>
+      <div class="posts-index-item">
+        <div class="post-left">
+          <img src="<%= "/teachers_images/#{teacher.image_name}" %>">
+        </div>
+        <div class="post-right">
+          <div class="post-user-name">
+            <%= link_to(teacher.name, "/teachers/#{teacher.id}") %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>

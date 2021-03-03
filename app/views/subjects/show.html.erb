@@ -1,0 +1,11 @@
+<div class="main user-show">
+  <div class="container">
+    <div class="user">
+      <img src="<%= "/subjects_images/#{@subject.image_name}" %>">
+      <h2><%= @subject.name %></h2>
+      <% if @current_user%>
+        <% if @subject.user.id == @current_user.id %>
+        <%= link_to("編集", "/subjects/#{@subject.id}/edit") %>
+        <% end %>
+      <% end %>
+    </div>

@@ -1,0 +1,48 @@
+<div class="main top-main">
+  <div class="form-search">
+  <div class="form2 users-form2">
+    <div class="form-body2">
+
+      <%= form_tag("/home/search") do %>
+        <p style="color:black;font-size:14px;margin:0">学校名</p>
+        <input name="name" value="">
+        <input type="submit" value="検索">
+      <% end %>
+    </div>
+  </div>
+  </div>
+  <div class="top-message">
+    <h2>先代の知恵を借りちゃおう</h2>
+    <p>試験対策用webサイト</p>
+    <div class="message-wrapper">
+      <!--
+      <div class="container">
+        <%= link_to("/home/show") do %>
+          <span class="btm message">学校一覧</span>
+        <% end %>
+      </div>
+      -->
+    </div>
+  </div>
+  <div class="user-show2">
+    <div class="reigai">
+
+    <h1 class="form-heading2">学校一覧</h1>
+    </div>
+    <div class="container2">
+
+      <% @users.each do |user| %>
+        <div class="posts-index-item">
+          <div class="post-left2">
+            <img src="<%= "/user_images/#{user.image_name}" %>">
+          </div>
+          <div class="post-right">
+            <div class="post-user-name">
+                <a><%= link_to(user.name, "/users/#{user.id}") %></a>
+            </div>
+          </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

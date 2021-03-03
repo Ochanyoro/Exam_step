@@ -1,0 +1,21 @@
+<div class="main user-show">
+  <div class="container">
+    <h1 class="form-heading">学校一覧</h1>
+
+  </div>
+  <div class="container">
+    <% @users.each do |user| %>
+      <div class="posts-index-item">
+        <div class="post-left">
+          <img src="<%= "/courses_images/#{user.image_name}" %>">
+        </div>
+        <div class="post-right">
+          <div class="post-user-name">
+            <p><%= user.name%></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>

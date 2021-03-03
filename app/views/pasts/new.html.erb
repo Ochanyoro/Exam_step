@@ -1,0 +1,26 @@
+<div class="main users-new">
+  <div class="container">
+    <div class="form-heading">過去問,ノートの投稿</div>
+    <div class="form users-form">
+      <div class="form-body">
+        <%= form_with model:@past,local:true do |f| %>
+          <p><span class="medatu">名前</span></p>
+          <%= f.select :name, [["過去問", "過去問"], ["授業ノート", "授業ノート"], ["配布資料", "配布資料"], ["課題", "課題"],["その他", "その他"],], include_blank: "選択して下さい" %>
+          <p><span class="medatu">日付</span>:(何年度過去問,授業日)</p>
+          <%=f.date_field :post_at%>
+          <p><span class="medatu">前期or後期</span></p>
+          <%= f.select :when, [["中間", "中間"], ["期末", "期末"]], include_blank: "選択して下さい" %>
+          <p><span class="medatu">過去問難易度or授業ノート,課題,配布資料,おすすめ度</span>(0~5)</p>
+          <%=f.text_field :level %>
+          <%=f.hidden_field :subject_id,value:session[:subject_id]%>
+          <p><span class="medatu">資料の添付</span>(複数枚可)</p>
+          <%=f.file_field :images,multiple: true %>
+          <%=f.submit name="作成"%>
+        <% end %>
+  <div class="form-error">
+          <%= @error_message %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

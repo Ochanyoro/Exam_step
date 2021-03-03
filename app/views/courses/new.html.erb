@@ -1,0 +1,21 @@
+<div class="main users-new">
+  <div class="container">
+    <div class="form-heading">新しいコースを作成</div>
+    <div class="form users-form">
+      <div class="form-body">
+        <% @course.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+
+        <%= form_tag("/courses/create") do %>
+          <p>学校名:<%=User.find_by(id:@current_user).name%></p>
+          <p>コース名</p>
+          <input name="name" value="<%= @course.name %>">
+          <input type="submit" value="新規登録">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

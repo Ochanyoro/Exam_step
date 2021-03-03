@@ -1,0 +1,222 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+/* users/index ================================ */
+.users-heading {
+  font-weight: 300;
+  margin: 60px 0 20px;
+  font-size: 48px;
+  color: #bcc8d4;
+}
+
+.users-index-item {
+  padding: 20px 30px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+  display: table;
+  width: 100%;
+}
+
+.user-left img {
+  width: 50px;
+  height: 50px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+}
+
+.user-name a {
+  font-weight: 600;
+}
+
+.user-name a:hover {
+  color: #3ecdc6;
+}
+
+.user-name p {
+  font-weight: 600;
+}
+
+.user-name p:hover {
+  color: #FF884C;
+//  color: #3ecdc6;
+}
+
+.user-left {
+  float: left;
+  width: 10%;
+}
+
+.user-right {
+  width: 90%;
+  padding-left: 25px;
+  text-align: left;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* users/show ================================ */
+.user-show {
+  text-align: center;
+  width:100%;
+  height:auto;
+}
+
+.user-show2 {
+  text-align: center;
+  width:25%;
+  float:right;
+}
+
+.user {
+  width:100%;
+  margin-bottom: 20px;
+}
+
+.user2 {
+  width:100%;
+  margin-bottom: 20px;
+}
+
+.migi{
+  width:40%;
+  float:left;
+}
+.hidari{
+  width:60%;
+  float:left;
+}
+
+.user img {
+  width: 80px;
+  height: 80px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  margin: 20px 0 10px;
+  object-fit: cover;
+}
+
+.user h2 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.user p {
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.user a {
+  color: #8899a6;
+  text-decoration: underline;
+  font-weight: 200;
+}
+
+//.user span {
+  //color: #afb6bf;
+  //font-weight: 200;
+  //padding: 0 6px 0 8px;
+//}
+
+.user2 img {
+  width: 80px;
+  height: 80px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  margin: 20px 0 10px;
+  object-fit: cover;
+}
+
+.user2-image {
+  padding:0;
+  margin:0
+}
+
+.user2 h2 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.user2 p {
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.user2 a {
+  color: #8899a6;
+  text-decoration: underline;
+  font-weight: 200;
+}
+
+
+
+.user-tabs {
+  width:100%;
+  margin-top:40px;
+  margin-bottom: 0;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.user-tabss {
+  margin-top: 0px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.user-tabs li {
+  text-align: center;
+  width:16.66%;
+  float: left;
+}
+
+.user-tabs li.active {
+  border-bottom: 2px solid #3ecdc6;
+}
+
+.user-tabs li.active a {
+  color: #57575f;
+}
+
+.user-tabs a {
+  font-weight:500;
+  font-size: 12px;
+  display: inline-block;
+  padding: 20px 4px;
+  color: #afb6bf;
+}
+.user-tabss li {
+  float: left;
+}
+
+.user-tabss li.active {
+  border-bottom: 2px solid #3ecdc6;
+}
+
+.user-tabss li.active a {
+  color: #57575f;
+}
+
+.user-tabss a {
+  display: inline-block;
+  padding: 16px 30px;
+  color: #afb6bf;
+}
+
+/* users/new, users/edit ================================ */
+.users-form input {
+  margin-bottom: 15px;
+}
+
+.users-form2 input {
+  margin-bottom: 10px;
+}
+
+.users-form2 input[type="submit"] {
+  margin-bottom: 0px;
+}

@@ -1,0 +1,23 @@
+<div class="main users-new">
+  <div class="container">
+    <h1 class="form-heading">新規学校登録</h1>
+    <div class="form users-form">
+      <div class="form-body">
+        <% @user.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+
+        <%= form_tag("/users/create") do %>
+          <p>学校名</p>
+          <input name="name" value="<%= @user.name %>">
+          <p>パスワード</p>
+          <!-- パスワード用のフォームを追加してください -->
+          <input type="password" name="password" value="<%= @user.password %>">
+          <input type="submit" value="新規登録">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

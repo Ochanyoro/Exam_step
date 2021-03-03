@@ -1,0 +1,32 @@
+<div class="main users-index">
+  <div class="form-search4">
+  <div class="form2 users-form2">
+    <div class="form-body2">
+
+      <%= form_tag("/users/search") do %>
+        <p style="color:black;font-size:14px;margin:0;text-align:center">学校名</p>
+        <input name="name" value="">
+        <input type="submit" value="検索">
+      <% end %>
+    </div>
+  </div>
+  </div>
+  <div class="container">
+
+    <h1 class="users-heading">学校一覧</h1>
+    <% @users.each do |user| %>
+      <div class="users-index-item">
+        <!-- 指定されたHTMLを貼り付けてください -->
+        <div class="user-left">
+          <!-- <img>タグを用いて、プロフィール画像を表示してください -->
+          <img src="<%= "/user_images/#{user.image_name}" %>">
+        </div>
+        <div class="user-right">
+          <div class="post-user-name">
+          <p><%= link_to(user.name, "/users/#{user.id}") %></p>
+        </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
