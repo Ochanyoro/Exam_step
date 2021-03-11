@@ -128,6 +128,7 @@ GEM
     nio4r (2.5.5)
     nokogiri (1.11.1-x86_64-linux)
       racc (~> 1.4)
+    pg (1.2.3)
     popper_js (1.16.0)
     public_suffix (4.0.6)
     puma (5.2.1)
@@ -245,6 +246,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.3)
   mini_magick
+  pg (~> 1.1)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.2, >= 6.1.2.1)
