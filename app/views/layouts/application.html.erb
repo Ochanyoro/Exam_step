@@ -16,58 +16,64 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
   </head>
-
     <body>
       <header>
-        <div class="header-logo">
-          <!-- 以下の1行を削除し、指定されたHTMLを貼り付けてください -->
-          <% if @current_user %>
-            <%= link_to("Exam-Provision", "/") %>
-          <% else %>
-            <%= link_to("Exam-Provision", "/") %>
-          <% end %>
+        <div id="humMenu">
+          <input id="humCheck" type="checkbox">
+          <label id="humOpen" for="humCheck"><img src="/icon.png" alt="メニュー" width="34" height="30"></label>
+          <label id="humClose" for="humCheck"></label>
+          <nav>
+            <ul class="inner">
+              <% if @current_user %>
+                <li>
+                  <%= link_to("学校一覧", "/users/index") %>
+                </li>
+                <% if @current_user.id == session[:now_id].to_i%>
+                <li>
+                  <%= link_to("新規学校登録", "/signup") %>
+                </li>
+                <li>
+                  <%= link_to("コース作成", "/courses/new") %>
+                </li>
+                <li>
+                  <%= link_to("教授の追加", "/teachers/new") %>
+                </li>
+                <li>
+                  <%= link_to("科目の作成", "/subjects/new") %>
+                </li>
+                <% end %>
+                <% if session[:subject_id] %>
+                <li>
+                  <%= link_to("投稿", "/pasts/new") %>
+                </li>
+                <% end%>
+                <li>
+                  <%= link_to("ログアウト", "/logout", {method: :post}) %>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to("新規学校登録", "/signup") %>
+                </li>
+                <li>
+                  <%= link_to("ログイン", "/login") %>
+                </li>
+              <% end %>
+              </ul>
+          </nav>
         </div>
-        <ul class="header-menus">
-          <% if @current_user %>
+        <div class="abso">
+          <ul>
+            <% if @current_user %>
+            <li>
+              <%= link_to("Exam-Provision", "/") %>
+            </li>
             <li>
               <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
             </li>
-            <li>
-              <%= link_to("学校一覧", "/users/index") %>
-            </li>
-            <% if @current_user.id == session[:now_id].to_i%>
-            <li>
-              <%= link_to("新規学校登録", "/signup") %>
-            </li>
-            <li>
-              <%= link_to("コース作成", "/courses/new") %>
-            </li>
-            <li>
-              <%= link_to("教授の追加", "/teachers/new") %>
-            </li>
-            <li>
-              <%= link_to("科目の作成", "/subjects/new") %>
-            </li>
             <% end %>
-            <% if session[:subject_id] %>
-            <li>
-              <%= link_to("投稿", "/pasts/new") %>
-            </li>
-            <% end%>
-            <li>
-              <%= link_to("ログアウト", "/logout", {method: :post}) %>
-            </li>
-          <% else %>
-            <li>
-              <%= link_to("新規学校登録", "/signup") %>
-            </li>
-            <li>
-              <%= link_to("ログイン", "/login") %>
-            </li>
-          <% end %>
-        </ul>
+          </ul>
+        </div>
       </header>
 
       <% if flash[:notice] %>

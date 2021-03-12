@@ -114,7 +114,7 @@ header {
 
 .header-menus li {
   float: left;
-  line-height: 64px;
+  line-height: 50px;
   font-size: 13px;
   color: white;
   padding-left: 15px;
@@ -237,6 +237,12 @@ header {
   top:60px;
   width:100%;
 }
+
+.users-index .form-search{
+  position:absolute;
+  top:0px;
+  width:100%;
+}
 .form-search2{
   position:absolute;
   top:50px;
@@ -281,8 +287,8 @@ header {
 .reigai{
   max-width: 600px;
   margin: 0px auto;
-  padding-left: 15px;
-  padding-right: 30px;
+  padding-left: 0px;
+  padding-right: 0px;
   clear: both;
 }
 
@@ -485,6 +491,13 @@ header {
   font-family: "Font Awesome 5 Free";
   font-size: 12px;
   color: #FF9C32;
+}
+
+.hidari .p{
+  color:black;
+  font-size:13px;
+  margin:0;
+  text-align:center;
 }
 .star:before{
   font-weight: 900;

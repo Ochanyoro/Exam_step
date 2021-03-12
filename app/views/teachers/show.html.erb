@@ -56,27 +56,27 @@
           <div class="post-user-name">
             <% if subject.level %>
               <%if subject.level >= 0.0 && subject.level <0.5 %>
-                <div style="font-size:13px"><span class="star" data-rate="0.0"></span></div>
+                <div class="sstar"><span class="star" data-rate="0.0"></span></div>
               <% elsif subject.level >= 0.5 && subject.level <1.0 %>
-                <div style="font-size:13px"><span class="star" data-rate="0.5"></span></div>
+                <div class="sstar"><span class="star" data-rate="0.5"></span></div>
               <% elsif subject.level >= 1.0 && subject.level <1.5 %>
-                <div style="font-size:13px"><span class="star" data-rate="1.0"></span></div>
+                <div class="sstar"><span class="star" data-rate="1.0"></span></div>
               <% elsif subject.level >= 1.5 && subject.level <2.0 %>
-                <div style="font-size:13px"><span class="star" data-rate="1.5"></span></div>
+                <div class="sstar"><span class="star" data-rate="1.5"></span></div>
               <% elsif subject.level >= 2.0 && subject.level <2.5 %>
-                <div style="font-size:13px"><span class="star" data-rate="2.0"></span></div>
+                <div class="sstar"><span class="star" data-rate="2.0"></span></div>
               <% elsif subject.level >= 2.5 && subject.level <3.0 %>
-                <div style="font-size:13px"><span class="star" data-rate="2.5"></span></div>
+                <div class="sstar"><span class="star" data-rate="2.5"></span></div>
               <% elsif subject.level >= 3.0 && subject.level <3.5 %>
-                <div style="font-size:13px"><span class="star" data-rate="3.0"></span></div>
+                <div class="sstar"><span class="star" data-rate="3.0"></span></div>
               <% elsif subject.level >= 3.5 && subject.level <4.0 %>
-                <div style="font-size:13px"><span class="star" data-rate="3.5"></span></div>
+                <div class="sstar"><span class="star" data-rate="3.5"></span></div>
               <% elsif subject.level >= 4.0 && subject.level <4.5 %>
-                <div style="font-size:13px"><span class="star" data-rate="4.0"></span></div>
+                <div class="sstar"><span class="star" data-rate="4.0"></span></div>
               <% elsif subject.level >= 4.5 && subject.level <5.0 %>
-                <div style="font-size:13px"><span class="star" data-rate="4.5"></span></div>
+                <div class="sstar"><span class="star" data-rate="4.5"></span></div>
               <% else %>
-                <div style="font-size:13px"><span class="star" data-rate="5.0"></span></div>
+                <div class="sstar"><span class="star" data-rate="5.0"></span></div>
               <% end %>
             <% else %>
               <%= link_to("", "/posts/#{subject.id}") %>

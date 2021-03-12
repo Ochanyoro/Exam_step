@@ -39,9 +39,9 @@
     <div class="hidari formm users-form2">
       <div class="form-body2">
         <%= form_tag("/posts/#{@subject.id}/create") do %>
-          <p style="color:black;font-size:14px;margin:0;text-align:center">授業のおすすめ度を５段階で入力</p>
+          <p class="p" >授業のおすすめ度を５段階で入力</p>
           <input name="evaluate">
-          <p style="color:black;font-size:14px;margin:0;text-align:center">授業の感想及び評価</p>
+          <p class="p" >授業の感想及び評価</p>
           <textarea name="content"><%= @post.content %></textarea>
           <input type="submit" value="投稿">
         <% end %>
@@ -54,7 +54,7 @@
 
     <!-- 指定されたコードを貼り付けてください -->
     <ul class="user-tabs">
-      <li><%= link_to("授業コメント", "/posts/#{@subject.id}") %></li>
+      <li><%= link_to("コメント", "/posts/#{@subject.id}") %></li>
       <li><%= link_to("過去問", "/posts/#{@subject.id}/past_mondai") %></li>
       <li><%= link_to("授業ノート", "/posts/#{@subject.id}/note") %></li>
       <li><%= link_to("配布資料", "/posts/#{@subject.id}/handout") %></li>
@@ -104,7 +104,7 @@
                   <div class="col-6">
                     <div class="user2-image mb-4">
                       <%= link_to image, "data-lightbox" => image do %>
-                        <%= image_tag image.variant(resize: '250'),:style=>"width:300;"  %>
+                        <%= image_tag image.variant(resize: '350'),:style=>"width:100%;"  %>
                       <% end %>
                     </div>
                   </div>

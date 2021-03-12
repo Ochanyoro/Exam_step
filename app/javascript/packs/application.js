@@ -7,8 +7,8 @@ import Rails from "@rails/ujs"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 //=require bootstrap
-//= require jquery
-//= require jquery_ujs
 Rails.start()
 ActiveStorage.start()
 //= require_tree .
+//= require jquery
+//= require jquery_ujs
