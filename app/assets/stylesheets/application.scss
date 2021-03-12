@@ -31,7 +31,7 @@ a:hover{
 }
 
 
-@media (max-width: 670px) {
+@media (max-width: 750px) {
   .top-main {
     background-image: url(/group_select.jpg);
     padding: 150px 0 0;
@@ -44,7 +44,7 @@ a:hover{
     color: white;
     background-color: #FFB28C;
     background-repeat: no-repeat;
-    background-position: -120px 20px;
+    background-position: -170px 20px;
     background-size: cover;
   }
 
@@ -61,7 +61,6 @@ a:hover{
     //background-color: #3ecdc6;
     height: 50px;
     position: absolute;
-    z-index: 1;
     width: 100%;
   }
 
@@ -170,7 +169,7 @@ a:hover{
 
   .container2 {
     max-width: 600px;
-    max-height: 500px;
+    max-height: 650px;
     overflow-y: scroll;
     margin: 0px auto;
     padding-left: 15px;
