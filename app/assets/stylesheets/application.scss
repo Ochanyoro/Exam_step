@@ -149,7 +149,7 @@ a:hover{
     color: white;
     background-color: #FFB28C;
     background-repeat: no-repeat;
-    background-position: -220px 20px;
+    background-position: -180px 20px;
     background-size: cover;
   }
 
@@ -217,6 +217,11 @@ a:hover{
     font-size: 13px;
   }
 
+  .users-index .form-search{
+    position:absolute;
+    top:50px;
+    width:100%;
+  }
   .form-search{
     position:absolute;
     top:50px;
