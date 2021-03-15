@@ -52,7 +52,7 @@ body {
 
 .main {
   position: absolute;
-  top: 7%;
+  top: 50px;
   width: 100%;
   height: auto;
   min-height: 93%;
@@ -234,7 +234,7 @@ header {
 
 .form-search{
   position:absolute;
-  top:60px;
+  top:50px;
   width:100%;
 }
 
@@ -444,8 +444,8 @@ header {
   background-color: #FF8026;
   text-align: center;
   position: absolute;
-  top: 64px;
-  z-index: 10;
+  top: 50px;
+  z-index: 1;
   width: 100%;
   border-radius: 0 0 2px 2px;
   font-size: 14px;
