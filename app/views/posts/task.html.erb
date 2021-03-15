@@ -105,6 +105,7 @@
                     <div class="user2-image mb-4">
                       <%= link_to image, "data-lightbox" => image do %>
                         <%= image_tag image.variant(resize: '350'),:style=>"width:100%;"  %>
+                        <%= image_tag image.image %>
                       <% end %>
                     </div>
                   </div>
