@@ -3,7 +3,7 @@ require 'date'
 class PostsController < ApplicationController
   before_action :authenticate_user
   before_action :ensure_correct_user
-
+  before_action :select_message,only: [:past_mondai,:note,:handout,:another,:task]
 
   def index
     @posts   = Post.where(subject_id:session[:subject_id])
@@ -207,6 +207,11 @@ class PostsController < ApplicationController
       @posts_data.push(data)
     end
     session[:subject_id] = @subject.id
+  end
+
+  def select_message
+    @room = Room.find_by(subject_id: params[:id])
+    @messages = @room.messages
   end
 
 end

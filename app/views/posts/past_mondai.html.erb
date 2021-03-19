@@ -49,10 +49,19 @@
     </div>
   </div>
   </div>
+
+  <div id="chats">
+    <div id='messages' data-room_id="<%= @room.id %>" data-user_id="<%= @current_user.id %>">
+      <%= render @messages %>
+    </div>
+
+  </div>
+  <div id="send-form">
+    <%= label_tag :content, placeholder="入力してね" ,style: "font-size:12px;"%>
+    <%= text_field_tag :content, nil, data: { behavior: 'room_speaker'} ,style:"border: 1.5px solid black;border-radius: 0.3em;background-color: snow;width: 150px;font-size: 11px;padding: 0.2em; "%>
+  </div>
   <div class="con">
   <div class="container3">
-
-
     <!-- 指定されたコードを貼り付けてください -->
     <ul class="user-tabs">
       <li><%= link_to("コメント", "/posts/#{@subject.id}") %></li>

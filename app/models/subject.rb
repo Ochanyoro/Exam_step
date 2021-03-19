@@ -1,6 +1,7 @@
 require 'bigdecimal'
 
 class Subject < ApplicationRecord
+  has_one :rooms
   validates :name,    {presence: true}
   validates :teacher_id, {presence: true}
 

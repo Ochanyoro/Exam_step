@@ -307,6 +307,7 @@ a:hover{
     min-height:180px;
     max-width: 600px;
     margin: 95px auto;
+    margin-bottom:10px;
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 100px;
@@ -317,7 +318,16 @@ a:hover{
   .con .container3 {
     min-height:180px;
     max-width: 600px;
-    margin: -30px auto;
+    margin: 0px auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 100px;
+    clear: both;
+  }
+  .can .container3{
+    min-height:180px;
+    max-width: 600px;
+    margin: 40px auto;
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 100px;

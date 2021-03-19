@@ -71,6 +71,10 @@ class SubjectsController < ApplicationController
     end
     if @subject.save
       session[:subject_id] = @subject.id
+      @room = Room.create(
+        subject_id: @subject.id
+      )
+      @room.save()
       flash[:notice] = "新しい科目を作成しました"
       redirect_to("/subjects/#{@subject.id}")
     else

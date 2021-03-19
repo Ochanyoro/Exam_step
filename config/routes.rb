@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'rooms/show'
   resources :pasts
 
   get "posts/index"         => "posts#index"
