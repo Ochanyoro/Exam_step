@@ -3,7 +3,14 @@ require 'date'
 class PostsController < ApplicationController
   before_action :authenticate_user
   before_action :ensure_correct_user
-  before_action :select_message,only: [:past_mondai,:note,:handout,:another,:task]
+  before_action :select_past_mondai,only: [:past_mondai]
+  before_action :select_note,only: [:note]
+  before_action :select_handout,only: [:handout]
+  before_action :select_task,only: [:task]
+  before_action :select_another,only: [:another]
+  before_action :select_comment,only: [:show]
+
+
 
   def index
     @posts   = Post.where(subject_id:session[:subject_id])
@@ -209,9 +216,31 @@ class PostsController < ApplicationController
     session[:subject_id] = @subject.id
   end
 
-  def select_message
-    @room = Room.find_by(subject_id: params[:id])
+  def select_past_mondai
+    @room = Room.find_by(subject_id: params[:id],name:"past_mondai")
     @messages = @room.messages
   end
+  def select_note
+    @room = Room.find_by(subject_id: params[:id],name:"note")
+    @messages = @room.messages
+  end
+  def select_handout
+    @room = Room.find_by(subject_id: params[:id],name:"handout")
+    @messages = @room.messages
+  end
+  def select_task
+    @room = Room.find_by(subject_id: params[:id],name:"task")
+    @messages = @room.messages
+  end
+  def select_another
+    @room = Room.find_by(subject_id: params[:id],name:"another")
+    @messages = @room.messages
+  end
+  def select_comment
+    @room = Room.find_by(subject_id: params[:id],name:"comment")
+    @messages = @room.messages
+  end
+
+
 
 end

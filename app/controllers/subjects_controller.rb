@@ -71,10 +71,14 @@ class SubjectsController < ApplicationController
     end
     if @subject.save
       session[:subject_id] = @subject.id
-      @room = Room.create(
-        subject_id: @subject.id
-      )
-      @room.save()
+      Room.create! subject_id: @subject.id, name: "past_mondai"
+      Room.create! subject_id: @subject.id, name: "note"
+      Room.create! subject_id: @subject.id, name: "task"
+      Room.create! subject_id: @subject.id, name: "handout"
+      Room.create! subject_id: @subject.id, name: "another"
+      Room.create! subject_id: @subject.id, name: "comment"
+
+
       flash[:notice] = "新しい科目を作成しました"
       redirect_to("/subjects/#{@subject.id}")
     else
