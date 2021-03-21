@@ -13,6 +13,32 @@
  *= require_tree .
  *= require_self
  */
+.aa{
+ position:relative;
+ right:0;
+ bottom:0;
+ background-color:#F78181;
+ opacity: 1.0;
+ //background-color: #3ecdc6;
+ color:white;
+ padding:1px;
+ cursor: pointer;
+ font-weight: 400;
+ width: 60px;
+ margin-top:auto;
+ border-radius: 2px;
+ border:none;
+ float:right;
+ font-size: 7px;
+ text-align: center;
+ color:white;
+}
+.posts-index-item .aa a{
+  color:white;
+  font-size: 10px;
+  font-weight:500;
+}
+
 
  .chat {
    max-width: 600px;
@@ -377,6 +403,7 @@ a:hover{
   }
 
   .post-right {
+    position:relative;
     float: left;
     width: 80%;
     padding-left: 25px;
