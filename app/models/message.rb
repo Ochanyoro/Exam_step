@@ -3,6 +3,6 @@ class Message < ApplicationRecord
   # createの後にコミットする { MessageBroadcastJobのperformを遅延実行 引数はself }
   after_create_commit { MessageBroadcastJob.perform_later self }
 
-  belongs_to :user
+  belongs_to :user,optional: true
   belongs_to :room
 end

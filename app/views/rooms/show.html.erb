@@ -1,2 +1,26 @@
-<h1>Rooms#show</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
+<div class="chattt">
+  <div class="user-chat">
+    <div class="hihidari">
+    <img src="<%= "/courses_images/#{@course.image_name}" %>">
+    </div>
+    <div class="mimigi">
+    <h2><%= @course.name %></h2>
+    </div>
+  </div>
+
+  <div id="chats">
+  <% if @current_user %>
+    <div id='messages' data-room_id="<%= @room.id %>" data-user_id="<%= @current_user.id %>">
+      <%= render @messages %>
+    </div>
+  <% else %>
+    <div id='messages' data-room_id="<%= @room.id %>" data-user_id="nil">
+      <%= render @messages %>
+    </div>
+  <% end%>
+</div>
+<div id="send-form">
+  <%= label_tag :content, placeholder="入力してね" ,style: "font-size:12px;"%>
+  <%= text_field_tag :content, nil, data: { behavior: 'room_speaker'} ,style:"border: 1.5px solid black;border-radius: 0.3em;background-color: snow;width: 150px;font-size: 11px;padding: 0.2em; "%>
+</div>
+</div>

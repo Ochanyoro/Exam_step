@@ -5,6 +5,11 @@ class RoomChannel < ApplicationCable::Channel
 
 
   def speak(data)
-    Message.create! content: data['message'], user_id: params["user"], room_id: params['room']
+    puts "うんこ"
+    if data["uuser"] != "nil"
+      Message.create! content: data['message'], user_id: params["user"], room_id: params['room']
+    else
+      Message.create! content: data['message'], room_id: params['room']
+    end
   end
 end

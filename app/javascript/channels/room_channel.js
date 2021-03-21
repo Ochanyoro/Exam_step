@@ -14,12 +14,19 @@ $(function() {
     },
 
     received: function(data) {
-      return $('#messages').append(data);
+      var user_data = $('#messages').data('user_id')
+      if(user_data == "nil")
+        return $('#messages').append(data);
+      else
+      return $('#messages').append(data)
     },
 
     speak: function(message) {
+      console.log("ここまでは来てるよ")
+      console.log($('#messages').data('user_id'))
       return this.perform('speak', {
-        message: message
+        message: message,
+        uuser: $('#messages').data('user_id')
       });
     }
   });

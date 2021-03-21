@@ -19,6 +19,7 @@
         <div class="post-right">
           <div class="post-user-name-users">
             <%= link_to(course.name, "/courses/#{course.id}") %>
+            <%= link_to "チャットへ", room_path(course.room) %></li>
           </div>
         </div>
       </div>

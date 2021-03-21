@@ -1,4 +1,5 @@
 class Room < ApplicationRecord
-  has_many :messages
-  belongs_to :subject
+  has_many :messages,dependent: :destroy
+  belongs_to :subject,optional: true
+  belongs_to :course, optional: true
 end

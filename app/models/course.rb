@@ -1,4 +1,6 @@
 class Course < ApplicationRecord
+  has_one :room,dependent: :destroy
+
   validates :name,    {presence: true}
   validates :user_id, {presence: true}
 

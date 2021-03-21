@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'rooms/show'
   resources :pasts
+  resources :rooms, only: %i[show]
 
   get "posts/index"         => "posts#index"
   get 'posts/new'           => "posts#new"

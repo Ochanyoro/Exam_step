@@ -1,4 +1,20 @@
-
+<!--<div class="mycomment">
+  <p><%= "#{message.content}" %></p>
+</div>
+-->
+<% if message.user_id != nil %>
   <div class="mycomment">
     <p><%= "#{message.content}" %></p>
   </div>
+<% else %>
+  <div class="fukidasi">
+    <div class="faceicon">
+      <img src="/profile_icon.png" alt="相手">
+    </div>
+    <div class="chatting">
+      <div class="says">
+        <p><%=message.content%></p>
+      </div>
+    </div>
+  </div>
+<% end %>

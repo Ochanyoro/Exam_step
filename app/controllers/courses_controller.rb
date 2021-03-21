@@ -51,6 +51,7 @@ class CoursesController < ApplicationController
       user_id:@current_user.id
     )
     if @course.save
+      Room.create! course_id: @course.id
       session[:course_id] = @course.id
       flash[:notice] = "新しいコースを作成しました"
       redirect_to("/courses/#{@course.id}")
