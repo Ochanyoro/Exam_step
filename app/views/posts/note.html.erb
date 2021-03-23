@@ -74,6 +74,7 @@
       <li><%= link_to("その他", "/posts/#{@subject.id}/another") %></li>
 
     </ul>
+
     <% if @posts_data %>
       <% @posts_data.each do |post| %>
         <% if post[0] %>
@@ -84,8 +85,8 @@
           <div class="posts-index-item">
             <div class="row">
               <% post.each do |data| %>
-                <div class="a col-12 mb-1">
-                  授業ノート:おすすめ度
+                <div class="a col-6 mb-5">
+                  課題:おすすめ度
                   <%if data.level >= 0.0 && data.level <0.5 %>
                     <div style="font-size:13px"><span class="star" data-rate="0.0"></span>(<%= data.level%>)</div>
                   <% elsif data.level >= 0.5 && data.level <1.0 %>
@@ -109,24 +110,23 @@
                   <% else %>
                     <div style="font-size:13px"><span class="star" data-rate="5.0"></span>(<%= data.level%>)</div>
                   <% end %>
-                </div>
-            </div>
-              <div class="row mt-2">
-                <% data.images.each do |image| %>
-                  <div class="col-6">
-                    <div class="user2-image mb-4">
+                <div class="sslick">
+                  <% data.images.each do |image| %>
+                    <div class="user2-image mb-2">
                       <%= link_to image, "data-lightbox" => image do %>
-                        <%= image_tag image.variant(resize: '350'),:style=>"width:100%;"  %>
+                      <%= image_tag image.variant(resize: '350'),:style=>"width:100%;"  %>
                       <% end %>
                     </div>
-                  </div>
-                <% end %>
+                  <% end %>
+                </div>
+                </div>
               <% end %>
             </div>
           </div>
         <% end %>
       <% end %>
     <% end %>
+
   </div>
   </div>
 </div>
