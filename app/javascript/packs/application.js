@@ -12,3 +12,12 @@ ActiveStorage.start()
 //= require_tree .
 //= require jquery
 //= require jquery_ujs
+
+$(function() {
+    $('#sslick').slick({
+        dots: false,
+        //autoplay: true,
+        //autoplaySpeed: 1000,
+        swipe:true
+    });
+});

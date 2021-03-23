@@ -4,7 +4,11 @@
 -->
 <% if message.user_id != nil %>
   <div class="mycomment">
-    <p><%= "#{message.content}" %></p>
+    <% if message.content.include?(".jpg")%>
+      <img src="<%= "/message_images/#{message.content}" %>">
+    <% else %>
+      <p><%= "#{message.content}" %></p>
+    <% end %>
   </div>
 <% else %>
   <div class="fukidasi">
@@ -13,7 +17,11 @@
     </div>
     <div class="chatting">
       <div class="says">
-        <p><%=message.content%></p>
+        <% if message.content.include?(".jpg")%>
+          <img src="<%= "/message_images/#{message.content}" %>">
+        <% else %>
+          <p><%= "#{message.content}" %></p>
+        <% end %>
       </div>
     </div>
   </div>

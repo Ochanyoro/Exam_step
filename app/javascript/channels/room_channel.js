@@ -22,8 +22,7 @@ $(function() {
     },
 
     speak: function(message) {
-      console.log("ここまでは来てるよ")
-      console.log($('#messages').data('user_id'))
+      console.log(message)
       return this.perform('speak', {
         message: message,
         uuser: $('#messages').data('user_id')

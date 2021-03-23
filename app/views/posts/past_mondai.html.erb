@@ -107,13 +107,15 @@
                   <% else %>
                     <div style="font-size:13px"><span class="star" data-rate="5.0"></span>(<%= data.level%>)</div>
                   <% end %>
-
+<div id="sslick">
                   <% data.images.each do |image| %>
                     <div class="user2-image mb-2">
                       <%= link_to image, "data-lightbox" => image do %>
-                      <%= image_tag image.variant(resize: '350'),:style=>"width:100%;"  %></div>
+                      <%= image_tag image.variant(resize: '350'),:style=>"width:100%;"  %>
                       <% end %>
+                    </div>
                   <% end %>
+                  </div>
                 </div>
               <% end %>
             </div>
