@@ -14,7 +14,7 @@ ActiveStorage.start()
 //= require jquery_ujs
 
 $(function() {
-    $('#sslick').slick({
+    $('.sslick').slick({
         dots: false,
         //autoplay: true,
         //autoplaySpeed: 1000,
